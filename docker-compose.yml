@@ -1,5 +1,14 @@
 version: '3.7'
 services:
+
+  database:
+    image: "topaztechnology/mssql-server-linux:latest"
+    ports:
+      - ${DB_PORT}:1433
+    environment:
+      SA_PASSWORD: "${DB_PASSWORD}"
+      ACCEPT_EULA: "Y"
+
   localstack:
     image: localstack/localstack
     environment:

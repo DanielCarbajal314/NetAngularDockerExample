@@ -8,7 +8,7 @@ namespace Photo.Domain.Persistency.Common
 {
     public interface IRepository<T>
     {
-        Task<T> FindById(int Id);
+        Task<T> FindById(int id);
         Task<T> Register(T entity);
         Task Update(T entity);
         Task Delete(T entity);
