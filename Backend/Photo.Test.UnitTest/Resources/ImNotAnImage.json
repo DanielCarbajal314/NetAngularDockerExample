@@ -1,0 +1,101 @@
+{
+  "idBoleta": "bol001",
+  "titulo": "BOLETA DE PAGO",
+  "subTitulo": "T.19 DEL DECRETO SUPREMO N° 001-98-TR DEL 22-01",
+  "datosEmpresa": {
+    "razonSocial": "EXCEL NEGOCIACIONES",
+    "ruc": "20440498287",
+    "rubroEmpresa": "ASESORIA Y CONSULTORIA CONTABILIDAD",
+    "direccion": {
+      "direccion": "Av. LOMA DE PILAR N° 175",
+      "departamento": "LIMA",
+      "provincia": "LIMA",
+      "distrito": "SANTIAGO DE SURCO"
+    },
+    "trabajador": {
+      "codigoTrabajador": "1113",
+      "nombres": "JOHANA",
+      "apellidos": "RODRIGUEZ SANCHEZ",
+      "tipoDocumento": "DNI",
+      "numeroDocumento": "45875421",
+      "fechaNacimiento": "01/04/2017",
+      "numeroHijos": 0,
+      "direccion": {
+        "direccion": "Libertad 130",
+        "departamento": "LA LIBERTAD",
+        "provincia": "TRUJILLO",
+        "distrito": "TRUJILLO"
+      }
+    },
+    "datosRelacionLaboral": {
+      "codigoCargo": "cargo001",
+      "cargo": "ASISTENTE CONTABLE",
+      "categoria": "EMPLEADO",
+      "periodo": "MENSUAL",
+      "esONP": true,
+      "tipoAFP": "ONP",
+      "codigoCUSPP": 0,
+      "fechaIngreso": "01/04/2017",
+      "fechaCese": null,
+      "fechaInicioVacaciones": null,
+      "fechaFinVacaciones": null,
+      "diasVacaciones": null,
+      "numeroDiasLaborados": 30,
+      "totalHorasLaboradas": null,
+      "totalHorasExtras": null,
+      "numeroDiasNoLaborados": null,
+      "ctaAhorros": "174-001651555",
+      "otroEmpleadorImporte": 0.00
+    },
+    "detalleRemuneraciones": {
+      "remuneracionesTrabajador": {
+        "remuneraciones": [
+          {
+            "codigoRemuneracion": "rem001",
+            "descripcionRemuneracion": "Sueldo computable",
+            "monto": 1800
+          },
+          {
+            "codigoRemuneracion": "rem002",
+            "descripcionRemuneracion": "asignacion familiar",
+            "monto": 0
+          },
+          {
+            "codigoRemuneracion": "rem003",
+            "descripcionRemuneracion": "remuneracion vaccional",
+            "monto": 0
+          }
+        ],
+        "totalRemuneraciones": 1800
+      },
+      "detencionesTrabajador": {
+        "detenciones": [
+          {
+            "codigoDetencione": "det001",
+            "descripcionDetencione": "AFP fondo",
+            "monto": 0,
+            "portentajeDescuento": 0
+          },
+          {
+            "codigoDetencione": "det002",
+            "descripcionDetencione": "ONP",
+            "monto": 234,
+            "portentajeDescuento": null
+          }
+        ],
+        "totalDetenciones": 954
+      },
+      "aportacionesTrabajador": {
+        "aportaciones": [
+          {
+            "codigoAportacion": "apo001",
+            "descripcionAportacion": "Essalud",
+            "monto": 162
+          }
+        ],
+        "totalAportaciones": 162
+      },
+      "totalAPagar": 846
+    }
+  }
+}

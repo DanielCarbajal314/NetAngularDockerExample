@@ -13,8 +13,8 @@ namespace Photo.BusinessLogic.Transformations
         {
             var imgeTypes = new[]
             {
-                new { signature = "FFD8", type = "jpg"},
-                new { signature = "89504E470D0A1A0A", type = "png"}
+                new { signature = @"����", type = "jpg"},
+                new { signature = @"�PNG", type = "png"}
             };
             var str = System.Text.Encoding.Default.GetString(data);
             return imgeTypes.FirstOrDefault(x => str.StartsWith(x.signature))?.type ?? null;
