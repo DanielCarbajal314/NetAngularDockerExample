@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photo.Infrastructure.EFPers
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photo.Test.UnitTest", "Photo.Test.UnitTest\Photo.Test.UnitTest.csproj", "{B700A169-88CF-41BD-A5BA-60E69FF1987E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photo.Infrastructure.AWS", "Photo.Infrastructure.AWS\Photo.Infrastructure.AWS.csproj", "{B0A4BAAB-B25E-47C9-8D1E-7867A0630C90}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{B700A169-88CF-41BD-A5BA-60E69FF1987E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B700A169-88CF-41BD-A5BA-60E69FF1987E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B700A169-88CF-41BD-A5BA-60E69FF1987E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0A4BAAB-B25E-47C9-8D1E-7867A0630C90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0A4BAAB-B25E-47C9-8D1E-7867A0630C90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0A4BAAB-B25E-47C9-8D1E-7867A0630C90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0A4BAAB-B25E-47C9-8D1E-7867A0630C90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +58,7 @@ Global
 		{89C78F9E-974C-4921-9B92-C9C375D2AA97} = {5EB43D43-E20B-4EA5-A804-69778B36D13B}
 		{2E41A120-6C69-4A78-A504-24F078503F28} = {73E6CAE5-F58C-45B9-A1C9-303078BEDB22}
 		{B700A169-88CF-41BD-A5BA-60E69FF1987E} = {DF602C89-D481-49FA-A26B-1C36220E187C}
+		{B0A4BAAB-B25E-47C9-8D1E-7867A0630C90} = {73E6CAE5-F58C-45B9-A1C9-303078BEDB22}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA0B3477-E36B-486F-B552-7076D972AE41}
