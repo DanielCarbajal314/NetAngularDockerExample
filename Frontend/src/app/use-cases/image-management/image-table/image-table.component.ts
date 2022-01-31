@@ -5,7 +5,7 @@ import { RegisteredImage } from '../services/http/dto/registered-image.dto';
 import { ImageViewStateService } from '../services/image-view-state.service';
 
 @Component({
-  selector: 'app-image-table',
+  selector: 'image-table',
   templateUrl: './image-table.component.html',
   styleUrls: ['./image-table.component.scss']
 })

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BaseHttpService } from 'src/app/shared/services/base-http-service';
@@ -10,9 +11,14 @@ import { UploadImageResponse } from './dto/upload-image-response.dto';
   providedIn: 'root'
 })
 export class ImageHttpService extends BaseHttpService {
+
+  constructor(http: HttpClient) {
+    super(http);
+  }
   
   getAllImage(): Observable<RegisteredImage[]> {
-    return this.http.get<RegisteredImage[]>(this.buildUrl('Image'));
+    const url = this.buildUrl('Image');
+    return this.http.get<RegisteredImage[]>(url);
   }
 
   getImage(id: number): Observable<ImageStatus> {

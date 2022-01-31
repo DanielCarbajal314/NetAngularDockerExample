@@ -7,7 +7,7 @@ export class BaseHttpService {
     constructor(protected http: HttpClient){}
 
     protected buildUrl(path: string) {
-        return `${this.baseUrl}/path`;
+        return `${this.baseUrl}${path}`;
     }
 
 }

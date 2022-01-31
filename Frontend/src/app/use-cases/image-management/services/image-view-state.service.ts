@@ -12,7 +12,9 @@ export class ImageViewStateService {
   constructor(private imageHttpService: ImageHttpService) { }
 
   refreshImages(){
-    this.imageHttpService.getAllImage().subscribe(images => this.$registerImages.next(images));
+    this.imageHttpService.getAllImage().subscribe(images => {
+      this.$registerImages.next(images)
+    });
   }
 
 }
