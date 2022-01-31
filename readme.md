@@ -22,6 +22,7 @@ to a dispacher to created thumbnails of diferent sizes.
     - Mediator, UnitOfWork, Repository, facade, CQRS
 -   WepApi on Net6
 -   Event Dispacher listening to RabbitMq
+-   Local Stack Service with initial Setup
 
 ## Frontend
 -   Angular 13
