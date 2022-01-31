@@ -23,6 +23,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Photo.BussinessLogic\Photo.BusinessLogic.csproj" />
     <ProjectReference Include="..\Photo.Domain\Photo.Domain.csproj" />
+    <ProjectReference Include="..\Photo.Infrastructure.AWS\Photo.Infrastructure.AWS.csproj" />
+    <ProjectReference Include="..\Photo.Infrastructure.EFPersistency\Photo.Infrastructure.EFPersistency.csproj" />
   </ItemGroup>
 
   <ItemGroup>

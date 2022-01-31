@@ -14,13 +14,13 @@ namespace Photo.BusinessLogic.Transformations
         {
             using (var md5 = MD5.Create())
             {
-                var signature = md5.TransformFinalBlock(dataByteArray, 0, dataByteArray.Length);
-                var hashBuilder = new StringBuilder();
-                for (int i = 0; i < signature.Length; i++)
+                byte[] hashBytes = md5.ComputeHash(dataByteArray);
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
                 {
-                    hashBuilder.Append(signature[i].ToString("x2"));
+                    sb.Append(hashBytes[i].ToString("X2"));
                 }
-                return hashBuilder.ToString();
+                return sb.ToString();
             }
         }
     }

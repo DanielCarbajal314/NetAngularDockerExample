@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <UserSecretsId>ac5ccf9e-5cc6-4e2f-bd36-638bd0255b50</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Photo.BussinessLogic\Photo.BusinessLogic.csproj" />
+    <ProjectReference Include="..\Photo.Domain\Photo.Domain.csproj" />
+    <ProjectReference Include="..\Photo.Infrastructure.AWS\Photo.Infrastructure.AWS.csproj" />
+    <ProjectReference Include="..\Photo.Infrastructure.Boostrap\Photo.Infrastructure.Boostrap.csproj" />
+    <ProjectReference Include="..\Photo.Infrastructure.EFPersistency\Photo.Infrastructure.EFPersistency.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Photo.BussinessLogic\Photo.BusinessLogic.csproj" />
+    <ProjectReference Include="..\Photo.Domain\Photo.Domain.csproj" />
+    <ProjectReference Include="..\Photo.Infrastructure.AWS\Photo.Infrastructure.AWS.csproj" />
+    <ProjectReference Include="..\Photo.Infrastructure.EFPersistency\Photo.Infrastructure.EFPersistency.csproj" />
+  </ItemGroup>
+
+</Project>

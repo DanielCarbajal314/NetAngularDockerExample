@@ -32,12 +32,16 @@ namespace Photo.Infrastructure.AWS
         {
             using (var s3Client = this.buildS3Config())
             {
-                await s3Client.PutObjectAsync(new PutObjectRequest
+                using(var inputStream = new MemoryStream(request.Data)) 
                 {
-                    BucketName = this._AWSSettings.BucketName,
-                    Key = request.FileName,
-                    CannedACL = S3CannedACL.PublicRead
-                });
+                    await s3Client.PutObjectAsync(new PutObjectRequest
+                    {
+                        BucketName = this._AWSSettings.BucketName,
+                        Key = request.FileName,
+                        InputStream = inputStream,
+                        CannedACL = S3CannedACL.PublicRead
+                    });
+                }
             }
             return new ImageToSaveResponse
             {
@@ -51,6 +55,7 @@ namespace Photo.Infrastructure.AWS
             if (this._AWSSettings.AwsUrl != null)
             {
                 config.ServiceURL = this._AWSSettings.AwsUrl;
+                config.ForcePathStyle = true;
             }
             return new AmazonS3Client(this._AWSSettings.Key, this._AWSSettings.Secret, config);
         }
