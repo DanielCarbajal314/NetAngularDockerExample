@@ -1,1 +1,9 @@
-<p>image-form works!</p>
+<div fxLayout="row" fxLayoutGap="4%" fxFlexOffset="20" class="image-form">
+    <mat-form-field fxFlex="70">
+        <ngx-mat-file-input [formControl]="fileControl"></ngx-mat-file-input>
+        <mat-icon matSuffix>folder</mat-icon>
+    </mat-form-field>
+    <div fxFlex="30">
+        <button mat-raised-button color="primary" (click)="uploadFile()" [disabled]="isUploadingFile | async">Upload</button>
+    </div>
+</div>

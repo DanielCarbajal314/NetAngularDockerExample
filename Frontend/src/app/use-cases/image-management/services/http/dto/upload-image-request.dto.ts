@@ -1,4 +1,4 @@
 export interface UploadImageRequest {
     fileName: string;
-    fileContent: Blob;
+    fileContent: File;
 }

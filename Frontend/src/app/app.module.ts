@@ -11,6 +11,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './shared/modules/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ImageDisplayerComponent } from './use-cases/image-management/image-displayer/image-displayer.component';
+import { FileInputConfig, MaterialFileInputModule, NGX_MAT_FILE_INPUT_CONFIG } from 'ngx-material-file-input';
+
+export const config: FileInputConfig = {
+  sizeUnit: 'Octet'
+};
 
 @NgModule({
   declarations: [
@@ -28,9 +33,10 @@ import { ImageDisplayerComponent } from './use-cases/image-management/image-disp
     FormsModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    MaterialFileInputModule
   ],
-  providers: [],
+  providers: [{ provide: NGX_MAT_FILE_INPUT_CONFIG, useValue: config }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
