@@ -8,5 +8,6 @@
         public string LargeThumbnailURL { get; set; }
         public string MediumThumbnailURL { get; set; }
         public string SmallThumbnailURL { get; set; }
+        public bool Proccessed { get; set; }
     }
 }

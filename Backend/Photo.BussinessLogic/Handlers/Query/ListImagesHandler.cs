@@ -26,7 +26,8 @@ namespace Photo.BusinessLogic.Handlers.Query
                 MediumThumbnailURL = image.MediumThumbnailURL,
                 SmallThumbnailURL = image.SmallThumbnailURL,
                 OriginalImageURL = image.OriginalImageURL,
-                Name = image.Name
+                Name = image.Name,
+                Proccessed = image.WasProcessed
             });
         }
     }

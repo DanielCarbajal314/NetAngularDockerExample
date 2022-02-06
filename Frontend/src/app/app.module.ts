@@ -8,13 +8,17 @@ import { ImageManagementComponent } from './use-cases/image-management/image-man
 import { ImageTableComponent } from './use-cases/image-management/image-table/image-table.component';
 import { ImageFormComponent } from './use-cases/image-management/image-form/image-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from './shared/modules/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ImageDisplayerComponent } from './use-cases/image-management/image-displayer/image-displayer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImageManagementComponent,
     ImageTableComponent,
-    ImageFormComponent
+    ImageFormComponent,
+    ImageDisplayerComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    FlexLayoutModule,
+    ReactiveFormsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

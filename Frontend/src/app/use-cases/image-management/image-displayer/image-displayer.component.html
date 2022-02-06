@@ -1,0 +1,15 @@
+<div fxFlex="90" fxFlexOffset="5">
+    <mat-card *ngIf="name | async">
+        <mat-card-header>
+          <mat-card-title> {{name | async }} </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div fxLayout="row" fxLayoutAlign="center center" >
+                <img [src]=" url | async ">
+            </div>
+        </mat-card-content>
+    </mat-card>    
+</div>
+
+
+
