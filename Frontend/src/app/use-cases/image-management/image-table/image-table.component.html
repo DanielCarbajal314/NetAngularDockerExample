@@ -17,7 +17,7 @@
             <td mat-cell *matCellDef="let element">
                 <div fxLayout="row" fxLayoutGap="5">
                     <mat-icon matTooltip="Display image" fxFlex="10" fxFlexOffset="40" (click)="displayImage(element)">preview</mat-icon>
-                    <mat-icon matTooltip="Display all sizes" fxFlex="10" (click)="displayAllSizes(element)">fullscreen</mat-icon>
+                    <mat-icon matTooltip="Display all sizes" fxFlex="10" (click)="displayAllSizes(element)" *ngIf="element.proccessed" >fullscreen</mat-icon>
                 </div>
             </td>
         </ng-container>

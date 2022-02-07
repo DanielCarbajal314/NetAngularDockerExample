@@ -15,6 +15,7 @@
     <ProjectReference Include="..\Photo.Domain\Photo.Domain.csproj" />
     <ProjectReference Include="..\Photo.Infrastructure.AWS\Photo.Infrastructure.AWS.csproj" />
     <ProjectReference Include="..\Photo.Infrastructure.EFPersistency\Photo.Infrastructure.EFPersistency.csproj" />
+    <ProjectReference Include="..\Photo.Infrastructure.Queu\Photo.Infrastructure.Queu.csproj" />
   </ItemGroup>
 
 </Project>

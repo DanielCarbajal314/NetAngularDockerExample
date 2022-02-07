@@ -5,6 +5,8 @@ using Photo.Domain.Common;
 using Photo.Domain.Entities;
 using Photo.Domain.External.File;
 using Photo.Domain.External.File.Common;
+using Photo.Domain.External.Queu;
+using Photo.Domain.External.Queu.DTO;
 using Photo.Domain.Persistency;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,10 +16,12 @@ namespace Photo.BusinessLogic.Handlers.Command
     public class RegisterImageHandler : BaseHandler, IRequestHandler<RegisterImageCommand, RegisterImageCommandResponse>
     {
         private IFileRepository _fileRepository;
+        private IRegisteredImageBus _registeredImageBus;
 
-        public RegisterImageHandler(IUnitOfWork unitOfWork, IFileRepository fileRepository) : base(unitOfWork)
+        public RegisterImageHandler(IUnitOfWork unitOfWork, IFileRepository fileRepository, IRegisteredImageBus registeredImageBus) : base(unitOfWork)
         {
             this._fileRepository = fileRepository;
+            this._registeredImageBus = registeredImageBus;
         }
 
         public async Task<RegisterImageCommandResponse> Handle(RegisterImageCommand request, CancellationToken cancellationToken)
@@ -37,6 +41,11 @@ namespace Photo.BusinessLogic.Handlers.Command
             };
             var savedImageOnDatabase = await this._unitOfWork.PhotoImageRepository.Register(imageToSave);
             await this._unitOfWork.Complete();
+            await this._registeredImageBus.Queu(new RegisteredImage
+            {
+                Id = savedImageOnDatabase.Id,
+                ImageName = fileNameOnRepo
+            });
             return new RegisterImageCommandResponse
             {
                 Id = savedImageOnDatabase.Id,

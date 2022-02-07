@@ -36,5 +36,11 @@ namespace Photo.Infrastructure.Boostrap.Sources
         public string AWSRegion => _configuration["AWS_REGION"];
 
         public string? AwsUrl => _configuration["AWS_URL"];
+
+        public string RabbitUserName => _configuration["RABBITMQ_USER"];
+
+        public string RabbitPassword => _configuration["RABBITMQ_PASSWORD"];
+
+        public string RabbitHost => _configuration["RABBITMQ_HOST"];
     }
 }

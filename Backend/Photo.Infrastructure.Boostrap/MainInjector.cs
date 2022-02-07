@@ -12,6 +12,7 @@ namespace Photo.Infrastructure.Boostrap
             services.SetupSettings(configuration);
             services.BoostrapAWS();
             services.BootstrapMediator();
+            services.BootstrapRabbitMq(configuration);
             return services;
         }
 

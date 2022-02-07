@@ -3,6 +3,7 @@ import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
 import { RegisteredImage } from './http/dto/registered-image.dto';
 import { UploadImageRequest } from './http/dto/upload-image-request.dto';
 import { ImageHttpService } from './http/image-http.service';
+import { ImageSocketService } from './http/image-socket.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,9 @@ export class ImageViewStateService {
   $displayImageEvent : Subject<RegisteredImage> = new Subject();
   $isUploadingFile : Subject<boolean> = new BehaviorSubject<boolean>(false);
 
-  constructor(private imageHttpService: ImageHttpService) { }
+  constructor(private imageHttpService: ImageHttpService, private imageSocketService: ImageSocketService) {
+    this.listenToImageCreation();
+  }
 
   refreshImages(){
     this.$isLoadingImageList.next(true);
@@ -39,6 +42,14 @@ export class ImageViewStateService {
     this.imageHttpService.uploadImage(request).subscribe(uploadedFile => {
       this.$isUploadingFile.next(false);
       this.$registerImages.next([ uploadedFile, ...this.images]);
+    })
+  }
+
+  private listenToImageCreation(){
+    this.imageSocketService.$registeredImageComplete.subscribe(image => {
+      const otherImages = this.images.filter(x => x.id !== image.id);
+      this.images = [ image, ...otherImages ].sort((a,b) => a.id - b.id);
+      this.$registerImages.next(this.images);
     })
   }
 }

@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>{{data.name}}</h1>
+<div mat-dialog-content>
+    <div fxLayout="row" fxLayoutAlign="center center" >
+        <img [src]="data.originalImageURL" class="image-display">
+        <img [src]="data.largeThumbnailURL" class="image-display">
+        <img [src]="data.mediumThumbnailURL" class="image-display">
+        <img [src]="data.smallThumbnailURL" class="image-display">
+    </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onDoneClick()">Done</button>
+</div>

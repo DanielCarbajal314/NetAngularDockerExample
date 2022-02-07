@@ -23,11 +23,13 @@ to a dispacher to created thumbnails of diferent sizes.
 -   WepApi on Net6
 -   Event Dispacher listening to RabbitMq
 -   Local Stack Service with initial Setup
+-   SignalR for messaging Asyncronuous Events
 
 ## Frontend
 -   Angular 13
 -   Angular Material
 -   Rxjs Shared Services to handled State Management
+-   SignalR integration with Angular
 
 ## License
 

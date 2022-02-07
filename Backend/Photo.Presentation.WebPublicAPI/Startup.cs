@@ -7,7 +7,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Photo.BusinessLogic.Workers;
 using Photo.Infrastructure.Boostrap;
+using Photo.Infrastructure.SignalR;
+using Photo.Presentation.WebPublicAPI.Initialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,16 +38,18 @@ namespace Photo.Presentation.WebPublicAPI
                 options.AddPolicy("AllowAll",
                     builder =>
                     {
-                        builder
-                        .AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader();
+                        builder.AllowAnyHeader()
+                           .AllowAnyMethod()
+                           .SetIsOriginAllowed((host) => true)
+                           .AllowCredentials();
                     });
             });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Photo.Presentation.WebPublicAPI", Version = "v1" });
             });
+            services.AddSignalR();
+            services.AddHostedService<ImageProcesorService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,11 +67,14 @@ namespace Photo.Presentation.WebPublicAPI
             app.UseRouting();
 
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<ProcessedImageHub>("/hubs/images");
             });
+
+
+            app.Migrate();
         }
     }
 }

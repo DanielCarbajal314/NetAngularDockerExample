@@ -45,7 +45,11 @@ namespace Photo.BusinessLogic.Handlers.Command
             {
                 LargeThumbnailURL = imageFromDb.LargeThumbnailURL,
                 MediumThumbnailURL = imageFromDb.MediumThumbnailURL,
-                SmallThumbnailURL = imageFromDb.SmallThumbnailURL
+                SmallThumbnailURL = imageFromDb.SmallThumbnailURL,
+                Id = request.Id,
+                Name = imageFromDb.Name,
+                OriginalImageURL = imageFromDb.OriginalImageURL,
+                Proccessed = true
             };
         }
     }

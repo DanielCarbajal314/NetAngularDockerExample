@@ -1,14 +1,10 @@
 ﻿using Photo.Infrastructure.AWS.Bootstrap;
 using Photo.Infrastructure.EFPersistency.Bootstrap;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Photo.Infrastructure.Queu.Bootstrap;
 
 namespace Photo.Infrastructure.Boostrap.Configurations
 {
-    public interface IPhotoSettings : ISqlEnviromentSettings, IAwsSettings
+    public interface IPhotoSettings : ISqlEnviromentSettings, IAwsSettings, IRabbitWrapperConfiguration
     {
 
     }

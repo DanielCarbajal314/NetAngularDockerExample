@@ -12,6 +12,7 @@ import { MaterialModule } from './shared/modules/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ImageDisplayerComponent } from './use-cases/image-management/image-displayer/image-displayer.component';
 import { FileInputConfig, MaterialFileInputModule, NGX_MAT_FILE_INPUT_CONFIG } from 'ngx-material-file-input';
+import { ImageThumbnailDisplayerComponent } from './use-cases/image-management/image-thumbnail-displayer/image-thumbnail-displayer.component';
 
 export const config: FileInputConfig = {
   sizeUnit: 'Octet'
@@ -23,7 +24,8 @@ export const config: FileInputConfig = {
     ImageManagementComponent,
     ImageTableComponent,
     ImageFormComponent,
-    ImageDisplayerComponent
+    ImageDisplayerComponent,
+    ImageThumbnailDisplayerComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +39,6 @@ export const config: FileInputConfig = {
     MaterialFileInputModule
   ],
   providers: [{ provide: NGX_MAT_FILE_INPUT_CONFIG, useValue: config }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, ImageThumbnailDisplayerComponent]
 })
 export class AppModule { }
