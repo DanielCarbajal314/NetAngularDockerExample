@@ -21,8 +21,10 @@ to a dispacher to created thumbnails of diferent sizes.
 -   Hexagonal Aquitecure using 
     - Mediator, UnitOfWork, Repository, facade, CQRS
 -   WepApi on Net6
+-   Unit Testing with Xunit
 -   Event Dispacher listening to RabbitMq
 -   Local Stack Service with initial Setup
+-   Using EFCore as ORM for SQL Server
 -   SignalR for messaging Asyncronuous Events
 
 ## Frontend
@@ -30,6 +32,12 @@ to a dispacher to created thumbnails of diferent sizes.
 -   Angular Material
 -   Rxjs Shared Services to handled State Management
 -   SignalR integration with Angular
+
+## Missing
+-   Integration Testing with Karate
+-   E2E testing with TestCafe
+-   Unit Testing Angular Components
+-   Configure Network Docker Compose Network for running everything Locally, only runs databases, queues and S3
 
 ## License
 
