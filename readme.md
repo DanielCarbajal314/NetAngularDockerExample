@@ -38,6 +38,7 @@ to a dispacher to created thumbnails of diferent sizes.
 -   E2E testing with TestCafe
 -   Unit Testing Angular Components
 -   Configure Network Docker Compose Network for running everything Locally, only runs databases, queues and S3
+-   Better Observability and exception handling
 
 ## License
 
