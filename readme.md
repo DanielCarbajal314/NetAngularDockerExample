@@ -39,6 +39,7 @@ to a dispacher to created thumbnails of diferent sizes.
 -   Unit Testing Angular Components
 -   Configure Network Docker Compose Network for running everything Locally, only runs databases, queues and S3
 -   Better Observability and exception handling
+-   CI/CD with Git Actions
 
 ## License
 
